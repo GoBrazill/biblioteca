@@ -18,7 +18,7 @@ public class EmprestimoService {
         this.emprestimoRepository = emprestimoRepository;
     }
 
-    public EmprestimoDTO criarEmprestimo(EmprestimoDTO dto, Usuario usuario) {
+    public EmprestimoDTO criarEmprestimo(EmprestimoDTO dto, Long id) {
         Emprestimo emprestimo = new Emprestimo(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()), dto.getDataDevolucao());
         emprestimoRepository.save(emprestimo);
 
