@@ -32,8 +32,8 @@ public class UsuarioService {
 //        Tive que perguntar a IA como usar o método .now em Date e ela falou que não existe e rcomendou isso
         carteiraBibliotecaDTO.setDataEmissao(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
         carteiraBibliotecaDTO.setValid(true);
-//        Não sei como pegar o id do usuário para setar a chave estrangeira na carteiraBiblioteca
-//        carteiraBibliotecaService.criarCarteiraBiblioteca(carteiraBibliotecaDTO);
+//        Não sei como pegar o id do usuário para setar a chave estrangeira na carteiraBiblioteca, acho que isso vai funcionar
+        carteiraBibliotecaService.criarCarteiraBiblioteca(carteiraBibliotecaDTO, usuario);
 
         UsuarioDTO usuarioDTO = new UsuarioDTO(usuario.getNome(), usuario.getEmail());
         return usuarioDTO;
